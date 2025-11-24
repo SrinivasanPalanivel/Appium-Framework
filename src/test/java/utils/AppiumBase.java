@@ -5,6 +5,7 @@ package utils;
 import java.time.Duration;
 import java.util.List;
 
+import enums.Locators;
 import org.openqa.selenium.DeviceRotation;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;

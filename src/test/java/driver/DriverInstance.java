@@ -1,4 +1,4 @@
-package base;
+package driver;
 
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -27,7 +27,7 @@ public class DriverInstance {
 		try {
 			driver.set(new AndroidDriver(new URI("http://127.0.0.1:4723").toURL(), options));
 		} catch (MalformedURLException | URISyntaxException e) {
-			System.err.println("Failed to Initialize the driver: "+e.toString());
+			System.err.println("Failed to Initialize the driver: "+ e);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

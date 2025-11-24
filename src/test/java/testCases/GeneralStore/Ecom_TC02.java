@@ -3,7 +3,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import utils.AppiumBase;
-import utils.Locators;
+import enums.Locators;
 
 public class Ecom_TC02 extends AppiumBase {
 	

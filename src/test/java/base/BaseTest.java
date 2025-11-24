@@ -5,6 +5,7 @@ import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.time.Duration;
 
+import driver.DriverInstance;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
@@ -21,7 +22,7 @@ public class BaseTest extends DriverInstance {
 	@BeforeClass
 	public static void appiumSetUp() throws MalformedURLException, URISyntaxException {
 
-		//startAppiumServer();
+		startAppiumServer();
 		
 		setDriver(APK_NAME, DEVICE_NAME);
 		setWait();
@@ -31,7 +32,7 @@ public class BaseTest extends DriverInstance {
 	@AfterClass
 	public static void appiumTearDown() {
 		getDriver().quit();
-		//service.stop();
+		service.stop();
 	}
 
 	public static void startAppiumServer() {
@@ -41,8 +42,11 @@ public class BaseTest extends DriverInstance {
 				.withAppiumJS(file)
 				.withIPAddress("127.0.0.1")
 				.usingPort(4723)
+				.withTimeout(Duration.ofSeconds(60))
 				.build();
 		service.start();
+
+		System.out.println("Server started: " + service.isRunning());
 	}
 
 }

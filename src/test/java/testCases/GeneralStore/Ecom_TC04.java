@@ -1,10 +1,15 @@
 package testCases.GeneralStore;
 
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import utils.AppiumBase;
-import utils.Locators;
+import enums.Locators;
 
 public class Ecom_TC04 extends AppiumBase {
 	
@@ -36,8 +41,18 @@ public class Ecom_TC04 extends AppiumBase {
 		System.out.println("Total Amount: "+total_amount);
 		
 		Assert.assertEquals(total_amount, cart_value);
-		
-		Thread.sleep(3000);
+
+		WebElement linkTermsAndConditions = locateElement(Locators.ID, "com.androidsample.generalstore:id/termsButton");
+		longPressAction(linkTermsAndConditions, 2000);
+
+        String alertName = getText(Locators.ID, "com.androidsample.generalstore:id/alertTitle");
+        Assert.assertEquals(alertName, "Terms Of Conditions");
+        click(Locators.ID, "android:id/button1");
+
+        click(Locators.CLASSNAME, "android.widget.CheckBox");
+        click(Locators.ID, "com.androidsample.generalstore:id/btnProceed");
+
+		Thread.sleep(120000);
 	}
 
 }

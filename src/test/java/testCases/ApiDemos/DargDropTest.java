@@ -1,11 +1,11 @@
-package basic;
+package testCases.ApiDemos;
 
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import utils.AppiumBase;
-import utils.Locators;
+import enums.Locators;
 
 public class DargDropTest extends AppiumBase {
 	

@@ -1,4 +1,4 @@
-package basic;
+package testCases.ApiDemos;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;

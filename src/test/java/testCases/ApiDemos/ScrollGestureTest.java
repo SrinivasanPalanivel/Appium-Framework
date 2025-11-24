@@ -1,9 +1,9 @@
-package basic;
+package testCases.ApiDemos;
 
 import org.testng.annotations.Test;
 
 import utils.AppiumBase;
-import utils.Locators;
+import enums.Locators;
 
 public class ScrollGestureTest extends AppiumBase{
 	

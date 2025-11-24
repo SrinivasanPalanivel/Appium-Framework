@@ -1,10 +1,10 @@
-package basic;
+package testCases.ApiDemos;
 
 import org.testng.annotations.Test;
 
 import io.appium.java_client.android.nativekey.AndroidKey;
 import utils.AppiumBase;
-import utils.Locators;
+import enums.Locators;
 
 public class MiscellaneousTest extends AppiumBase {
 	
