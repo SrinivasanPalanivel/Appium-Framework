@@ -1,11 +1,12 @@
-package utils;
+package absa.aic.utils;
 
 
 
 import java.time.Duration;
 import java.util.List;
 
-import enums.Locators;
+import absa.aic.driver.DriverInstance;
+import absa.aic.enums.Locators;
 import org.openqa.selenium.DeviceRotation;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
@@ -19,12 +20,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.google.common.collect.ImmutableMap;
 
-import base.BaseTest;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
 
-public class AppiumBase extends BaseTest {
+public class AppiumBase extends DriverInstance {
 	
 	public WebElement locateElement(Locators locatorType, String value) {
 		try {
@@ -90,6 +90,14 @@ public class AppiumBase extends BaseTest {
 			System.err.println(e.getMessage()+ ": Click Operation Failed");
 		}
 	}
+
+	public void click(WebElement element) {
+		try {
+			element.click();
+		} catch(Exception e) {
+			System.err.println(e.getMessage()+ ": Click Operation Failed");
+		}
+	}
 	
 	public String getText(Locators locator, String value) {
 		String elementText = null;
@@ -104,6 +112,14 @@ public class AppiumBase extends BaseTest {
 	public void setText(Locators locator, String value, String input) {
 		try {
 			locateElement(locator, value).sendKeys(input);
+		} catch(Exception e) {
+			System.err.println(e.toString() + ": SetText Operation Failed");
+		}
+	}
+
+	public void setText(WebElement element, String input) {
+		try {
+			element.sendKeys(input);
 		} catch(Exception e) {
 			System.err.println(e.toString() + ": SetText Operation Failed");
 		}

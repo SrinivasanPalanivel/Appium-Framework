@@ -1,4 +1,4 @@
-package utils;
+package absa.aic.utils;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -7,8 +7,8 @@ import java.util.Properties;
 
 
 
-import constants.ConstantPaths;
-import customException.FrameWorkException;
+import absa.aic.constants.ConstantPaths;
+import absa.aic.customexceptions.FrameWorkException;
 
 public final class PropertiesUtil {
 	

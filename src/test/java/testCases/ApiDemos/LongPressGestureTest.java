@@ -5,8 +5,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import io.appium.java_client.AppiumBy;
-import utils.AppiumBase;
-import enums.Locators;
+import absa.aic.utils.AppiumBase;
+import absa.aic.enums.Locators;
 
 public class LongPressGestureTest extends AppiumBase{
 	

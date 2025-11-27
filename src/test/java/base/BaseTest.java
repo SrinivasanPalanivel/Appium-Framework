@@ -1,28 +1,24 @@
 package base;
 
-import java.io.File;
-import java.net.MalformedURLException;
-import java.net.URISyntaxException;
 import java.time.Duration;
 
-import driver.DriverInstance;
+import absa.aic.driver.DriverInstance;
+import absa.aic.utils.AppiumServerManager;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
-import io.appium.java_client.service.local.AppiumDriverLocalService;
-import io.appium.java_client.service.local.AppiumServiceBuilder;
-import utils.PropertiesUtil;
+import absa.aic.utils.PropertiesUtil;
 
 public class BaseTest extends DriverInstance {
 
-	private static AppiumDriverLocalService service;	
+
 	public static final String APK_NAME = PropertiesUtil.getPropertyValue("APK_Name");
 	public static final String DEVICE_NAME = PropertiesUtil.getPropertyValue("Device_Name");
 
 	@BeforeClass
-	public static void appiumSetUp() throws MalformedURLException, URISyntaxException {
+	public static void appiumSetUp() {
 
-		startAppiumServer();
+		AppiumServerManager.startAppiumServer();
 		
 		setDriver(APK_NAME, DEVICE_NAME);
 		setWait();
@@ -32,21 +28,9 @@ public class BaseTest extends DriverInstance {
 	@AfterClass
 	public static void appiumTearDown() {
 		getDriver().quit();
-		service.stop();
+		AppiumServerManager.stopAppiumServer();
 	}
 
-	public static void startAppiumServer() {
-		// To Start the Appium Server Programmatically
-		File file = new File("C:\\nvm4w\\nodejs\\node_modules\\appium\\build\\lib\\main.js");
-		service = new AppiumServiceBuilder()
-				.withAppiumJS(file)
-				.withIPAddress("127.0.0.1")
-				.usingPort(4723)
-				.withTimeout(Duration.ofSeconds(60))
-				.build();
-		service.start();
 
-		System.out.println("Server started: " + service.isRunning());
-	}
 
 }

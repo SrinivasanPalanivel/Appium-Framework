@@ -3,8 +3,8 @@ package testCases.GeneralStore;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import utils.AppiumBase;
-import enums.Locators;
+import absa.aic.utils.AppiumBase;
+import absa.aic.enums.Locators;
 
 public class Ecom_TC03 extends AppiumBase {
 	

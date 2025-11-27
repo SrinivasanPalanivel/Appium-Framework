@@ -1,15 +1,11 @@
 package testCases.GeneralStore;
 
-import io.appium.java_client.android.nativekey.AndroidKey;
-import io.appium.java_client.android.nativekey.KeyEvent;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import utils.AppiumBase;
-import enums.Locators;
+import absa.aic.utils.AppiumBase;
+import absa.aic.enums.Locators;
 
 public class Ecom_TC04 extends AppiumBase {
 	

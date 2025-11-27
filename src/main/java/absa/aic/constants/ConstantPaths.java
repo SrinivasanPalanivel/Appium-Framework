@@ -1,4 +1,4 @@
-package constants;
+package absa.aic.constants;
 
 import java.io.File;
 

@@ -1,4 +1,4 @@
-package enums;
+package absa.aic.enums;
 
 public enum Locators {
 	

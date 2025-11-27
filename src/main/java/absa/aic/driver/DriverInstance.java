@@ -1,8 +1,6 @@
-package driver;
+package absa.aic.driver;
 
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import static constants.ConstantPaths.*;
 
 import java.net.MalformedURLException;
 import java.net.URI;
@@ -11,6 +9,8 @@ import java.time.Duration;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
+
+import static absa.aic.constants.ConstantPaths.RESOURCE_PATH;
 
 public class DriverInstance {
 	

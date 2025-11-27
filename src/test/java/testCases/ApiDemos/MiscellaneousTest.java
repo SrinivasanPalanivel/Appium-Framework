@@ -3,8 +3,8 @@ package testCases.ApiDemos;
 import org.testng.annotations.Test;
 
 import io.appium.java_client.android.nativekey.AndroidKey;
-import utils.AppiumBase;
-import enums.Locators;
+import absa.aic.utils.AppiumBase;
+import absa.aic.enums.Locators;
 
 public class MiscellaneousTest extends AppiumBase {
 	
